@@ -1,7 +1,7 @@
 
 %define plugin	softdevice
 %define name	vdr-plugin-%plugin
-%define version	0.3.1
+%define version	0.4.0
 %define snapshot 0
 %define rel	1
 %if %snapshot
@@ -65,7 +65,7 @@ param='-vo VIDEO_OUT'
 
 %build
 # simple configure script
-./configure --disable-subplugins
+./configure --disable-subplugins --enable-yaepg
 %vdr_plugin_build
 
 %install
@@ -85,5 +85,4 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY CHANGELOG
-
 
