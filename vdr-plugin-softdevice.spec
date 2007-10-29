@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define version	0.4.0
 %define snapshot 0
-%define rel	5
+%define rel	6
 %if %snapshot
 %define release	0.%snapshot.%rel
 %else
