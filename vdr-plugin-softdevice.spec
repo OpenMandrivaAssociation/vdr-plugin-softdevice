@@ -2,18 +2,18 @@
 %define plugin	softdevice
 %define name	vdr-plugin-%plugin
 %define version	0.4.0
-%define snapshot 0
-%define rel	6
+%define snapshot 20071029
+%define rel	1
 %if %snapshot
-%define release	0.%snapshot.%rel
+%define release	%mkrel 5.%snapshot.%rel
 %else
-%define release	%rel
+%define release	%mkrel %rel
 %endif
 
 Summary:	VDR plugin: A software emulated MPEG2 device
 Name:		%name
 Version:	%version
-Release:	%mkrel %release
+Release:	%release
 Group:		Video
 License:	GPL
 URL:		http://softdevice.berlios.de/
