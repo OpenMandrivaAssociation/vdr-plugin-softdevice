@@ -22,7 +22,6 @@ Source:		vdr-%plugin-%snapshot.tar.bz2
 %else
 Source:		http://download.berlios.de/softdevice/vdr-%plugin-%version.tar.bz2
 %endif
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	vdr-abi = %vdr_abi
 BuildRequires:	vdr-devel >= 1.4.1-6
 BuildRequires:	ffmpeg-devel
