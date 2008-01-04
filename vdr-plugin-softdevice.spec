@@ -2,8 +2,8 @@
 %define plugin	softdevice
 %define name	vdr-plugin-%plugin
 %define version	0.4.0
-%define snapshot 20071029
-%define rel	2
+%define snapshot 20080104
+%define rel	1
 %if %snapshot
 %define release	%mkrel 5.%snapshot.%rel
 %else
