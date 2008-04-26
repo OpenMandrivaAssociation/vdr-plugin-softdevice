@@ -1,11 +1,11 @@
 
 %define plugin	softdevice
 %define name	vdr-plugin-%plugin
-%define version	0.4.0
-%define snapshot 20080104
+%define version	0.5.0
+%define snapshot 0
 %define rel	1
 %if %snapshot
-%define release	%mkrel 5.%snapshot.%rel
+%define release	%mkrel 0.%snapshot.%rel
 %else
 %define release	%mkrel %rel
 %endif
@@ -20,11 +20,11 @@ URL:		http://softdevice.berlios.de/
 %if %snapshot
 Source:		vdr-%plugin-%snapshot.tar.bz2
 %else
-Source:		http://download.berlios.de/softdevice/vdr-%plugin-%version.tar.bz2
+Source:		http://download.berlios.de/softdevice/vdr-%plugin-%version.tgz
 %endif
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	vdr-abi = %vdr_abi
-BuildRequires:	vdr-devel >= 1.4.1-6
+BuildRequires:	vdr-devel >= 1.6.0
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libalsa-devel
 %if %mdkversion >= 200700
@@ -49,6 +49,7 @@ framebuffer.
 %setup -q -n %plugin-%version
 %endif
 dos2unix CHANGELOG
+%vdr_plugin_prep
 
 %vdr_plugin_params_begin %plugin
 # See plugin documentation and 'vdr --help' for detailed info
@@ -85,4 +86,3 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY CHANGELOG
-
