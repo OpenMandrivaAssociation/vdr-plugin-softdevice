@@ -2,10 +2,10 @@
 %define plugin	softdevice
 %define name	vdr-plugin-%plugin
 %define version	0.5.0
-%define snapshot 0
-%define rel	5
+%define snapshot 20090321
+%define rel	1
 %if %snapshot
-%define release	%mkrel 0.%snapshot.%rel
+%define release	%mkrel 5.%snapshot.%rel
 %else
 %define release	%mkrel %rel
 %endif
@@ -22,7 +22,6 @@ Source:		vdr-%plugin-%snapshot.tar.bz2
 %else
 Source:		http://download.berlios.de/softdevice/vdr-%plugin-%version.tgz
 %endif
-Patch0:		softdevice-new-ffmpeg.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	vdr-abi = %vdr_abi
 BuildRequires:	vdr-devel >= 1.6.0
@@ -49,7 +48,6 @@ framebuffer.
 %else
 %setup -q -n %plugin-%version
 %endif
-%patch0 -p0
 dos2unix CHANGELOG
 %vdr_plugin_prep
 
