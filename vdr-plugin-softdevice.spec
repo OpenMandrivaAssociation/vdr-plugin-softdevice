@@ -22,6 +22,7 @@ Source:		vdr-%plugin-%snapshot.tar.bz2
 %else
 Source:		http://download.berlios.de/softdevice/vdr-%plugin-%version.tgz
 %endif
+Patch0:		softdevice-linking-order.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	vdr-abi = %vdr_abi
 BuildRequires:	vdr-devel >= 1.6.0
@@ -48,6 +49,7 @@ framebuffer.
 %else
 %setup -q -n %plugin-%version
 %endif
+%patch0 -p0
 dos2unix CHANGELOG
 %vdr_plugin_prep
 
