@@ -74,6 +74,8 @@ param='-vo VIDEO_OUT'
 %install
 rm -rf %{buildroot}
 %vdr_plugin_install
+install -d -m755 %{buildroot}%{_bindir}
+install -m755 ShmClient %{buildroot}%{_bindir}
 
 %clean
 rm -rf %{buildroot}
@@ -88,3 +90,4 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY CHANGELOG
+%{_bindir}/ShmClient
