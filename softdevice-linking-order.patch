@@ -1,0 +1,16 @@
+Index: Makefile
+===================================================================
+RCS file: /cvsroot/softdevice/softdevice/Makefile,v
+retrieving revision 1.42
+diff -u -p -r1.42 Makefile
+--- Makefile	14 Apr 2008 02:52:10 -0000	1.42
++++ Makefile	27 Jul 2009 18:55:04 -0000
+@@ -426,7 +426,7 @@ SHM_CLIENT_OBJS  = video_shm.o video-xv_
+ 	$(CXX) $(CXXFLAGS) -c $(DEFINES) -DSTAND_ALONE $(INCLUDES) $< -o $@
+ 
+ ShmClient: $(SHM_CLIENT_OBJS)
+-	$(CXX) $(CXXFLAGS) $(XV_LIBS)  $(SHM_CLIENT_OBJS) -lpthread -o $@
++	$(CXX) $(CXXFLAGS) $(SHM_CLIENT_OBJS) -lpthread $(XV_LIBS) -o $@
+ 
+ 
+ MacVdrClient_obj = video_shm.o video-quartz_shm.o setup-softdevice_shm.o utils_shm.o VdrReplacements_shm.o PicBuffer_shm.o setup-softlog_shm.o MacVdrClient_shm.o
