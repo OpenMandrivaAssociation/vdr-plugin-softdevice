@@ -16,7 +16,7 @@ Version:	%version
 Release:	%release
 Group:		Video
 License:	GPLv2+
-URL:		http://softdevice.berlios.de/
+URL:		https://softdevice.berlios.de/
 %if %snapshot
 Source:		vdr-%plugin-%snapshot.tar.bz2
 %else
